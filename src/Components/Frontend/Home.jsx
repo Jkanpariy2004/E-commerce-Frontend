@@ -6,6 +6,7 @@ import Footer from '../Layouts/Footer';
 import Header from '../Layouts/Header';
 import ServiceImage from '../../assets/images/construction1.jpg';
 import ConstructionImage from '../../assets/images/construction2.jpg'
+import BlogImage from '../../assets/images/construction3.jpg'
 import Icon1 from '../../assets/images/icon-1.svg'
 import Icon2 from '../../assets/images/icon-2.svg'
 import Icon3 from '../../assets/images/icon-3.svg'
@@ -28,8 +29,8 @@ function Home() {
                                 <h1>Crafting dreams with <br /> precision and excellence</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, perferendis vel voluptatum omnis laborum molestiae reprehenderit suscipit, laudantium <br /> obcaecati totam repellendus eligendi consectetur aliquid facere optio harum, odit quisquam cupiditate.</p>
                                 <div className="mt-3">
-                                    <a className='btn btn-primary'>Contact Now</a>
-                                    <a className='btn btn-secondary ms-2'>View Project</a>
+                                    <a className='btn btn-primary large'>Contact Now</a>
+                                    <a className='btn btn-secondary ms-2 large'>View Project</a>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +73,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +89,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +105,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +121,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +194,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +210,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +226,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +242,7 @@ function Home() {
                                         <div className="service-content">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
                                         </div>
-                                        <a className='btn btn-primary'>Read More</a>
+                                        <a className='btn btn-primary small'>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +254,7 @@ function Home() {
                     <div className="container py-5">
                         <div className="section-header text-center">
                             <span>testimonials</span>
-                            <h2>what People are saying about us</h2>
+                            <h2>What People are saying about us</h2>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nam nesciunt quas voluptate error rerum!</p>
                         </div>
                         <Swiper
@@ -443,6 +444,57 @@ function Home() {
                                 </div>
                             </SwiperSlide>
                         </Swiper>
+                    </div>
+                </section>
+
+                <section className='section-6 bg-light py-5'>
+                    <div className="container">
+                        <div className="section-header text-center">
+                            <span>Blog & News</span>
+                            <h2>Articles & blog posts</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nam nesciunt quas voluptate error rerum!</p>
+                        </div>
+                        <div className="row pt-3">
+                            <div className="col-md-4">
+                                <div className="card shadow border-0">
+                                    <div className="card-img-top">
+                                        <img src={BlogImage} alt="" className='w-100' />
+                                    </div>
+                                    <div className="card-body p-3">
+                                        <div className='mb-3'>
+                                            <a className='title'>Dummy Blog Title</a>
+                                        </div>
+                                        <a className='btn btn-primary small'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="card shadow border-0">
+                                    <div className="card-img-top">
+                                        <img src={BlogImage} alt="" className='w-100' />
+                                    </div>
+                                    <div className="card-body p-3">
+                                        <div className='mb-3'>
+                                            <a className='title'>Dummy Blog Title</a>
+                                        </div>
+                                        <a className='btn btn-primary small'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="card shadow border-0">
+                                    <div className="card-img-top">
+                                        <img src={BlogImage} alt="" className='w-100' />
+                                    </div>
+                                    <div className="card-body p-3">
+                                        <div className='mb-3'>
+                                            <a className='title'>Dummy Blog Title</a>
+                                        </div>
+                                        <a className='btn btn-primary small'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
