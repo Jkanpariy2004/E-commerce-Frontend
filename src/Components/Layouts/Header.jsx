@@ -14,10 +14,10 @@ export class Header extends Component {
                             <Nav className="ms-auto">
                                 <Link className='nav-link' to="/">Home</Link>
                                 <Link className='nav-link' to="/about">About Us</Link>
-                                <Link className='nav-link' to="">Services</Link>
-                                <Link className='nav-link' to="">Projects</Link>
-                                <Link className='nav-link' to="">Blogs</Link>
-                                <Link className='nav-link' to="">Contact Us</Link>
+                                <Link className='nav-link' to="/services">Services</Link>
+                                <Link className='nav-link' to="/projects">Projects</Link>
+                                <Link className='nav-link' to="/blogs">Blogs</Link>
+                                <Link className='nav-link' to="/contact-us">Contact Us</Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
