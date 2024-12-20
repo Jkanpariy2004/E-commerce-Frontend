@@ -8,12 +8,12 @@ function Dashboard() {
         <div>
             <Header />
             <main>
-                <div className="container my-5">
+                <div className="container-fluid my-5">
                     <div className="row">
-                        <div className='col-md-3'>
+                        <div className='col-md-2'>
                             <Sidebar />
                         </div>
-                        <div className='col-md-9 dashboard'>
+                        <div className='col-md-10 dashboard'>
                             <div className="card border-0 shadow">
                                 <div className="card-body d-flex justify-content-center align-items-center">
                                     <h4>Welcome to Admin Dashboard</h4>
@@ -23,7 +23,6 @@ function Dashboard() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     )
 }

@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import AboutImg from '../../assets/images/about-us.jpg';
 import Footer from '../Layouts/Footer';
 import Header from '../Layouts/Header';
-import ServiceImage from '../../assets/images/construction1.jpg';
 import ConstructionImage from '../../assets/images/construction2.jpg'
 import BlogImage from '../../assets/images/construction3.jpg'
 import Icon1 from '../../assets/images/icon-1.svg'
@@ -16,8 +15,12 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import AboutSec from '../Common/AboutSec';
+import { apiUrl, token } from '../Common/Http';
+import LatestServices from '../Common/LatestServices';
 
 function Home() {
+    
+
     return (
         <>
             <Header />
@@ -40,81 +43,7 @@ function Home() {
 
                 <AboutSec />
 
-                <section className='section-3 bg-light py-5'>
-                    <div className="container-fluid py-5">
-                        <div className="section-header text-center">
-                            <span>our services</span>
-                            <h2>Our Best Services</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nam nesciunt quas voluptate error rerum!</p>
-                        </div>
-                        <div className="row pt-4">
-                            <div className="col-md-3 col-lg-3">
-                                <div className="item">
-                                    <div className="service-image">
-                                        <img src={ServiceImage} className='w-100' alt="" />
-                                    </div>
-                                    <div className="service-body">
-                                        <div className="service-title">
-                                            <h3>Lorem, ipsum.</h3>
-                                        </div>
-                                        <div className="service-content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
-                                        </div>
-                                        <a className='btn btn-primary small'>Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <div className="item">
-                                    <div className="service-image">
-                                        <img src={ServiceImage} className='w-100' alt="" />
-                                    </div>
-                                    <div className="service-body">
-                                        <div className="service-title">
-                                            <h3>Lorem, ipsum.</h3>
-                                        </div>
-                                        <div className="service-content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
-                                        </div>
-                                        <a className='btn btn-primary small'>Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <div className="item">
-                                    <div className="service-image">
-                                        <img src={ServiceImage} className='w-100' alt="" />
-                                    </div>
-                                    <div className="service-body">
-                                        <div className="service-title">
-                                            <h3>Lorem, ipsum.</h3>
-                                        </div>
-                                        <div className="service-content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
-                                        </div>
-                                        <a className='btn btn-primary small'>Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <div className="item">
-                                    <div className="service-image">
-                                        <img src={ServiceImage} className='w-100' alt="" />
-                                    </div>
-                                    <div className="service-body">
-                                        <div className="service-title">
-                                            <h3>Lorem, ipsum.</h3>
-                                        </div>
-                                        <div className="service-content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis a culpa, molestiae assumenda asperiores error.</p>
-                                        </div>
-                                        <a className='btn btn-primary small'>Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <LatestServices />
 
                 <section className='section-4 py-5'>
                     <div className="container py-5">

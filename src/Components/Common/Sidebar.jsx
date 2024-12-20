@@ -1,27 +1,56 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../Backend/Context/Auth'
+import React, { useContext } from "react";
+import { AuthContext } from "../Backend/Context/Auth";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
-    const { logout } = useContext(AuthContext)
+    const { logout } = useContext(AuthContext);
 
     return (
         <div className="card border-0 shadow">
             <div className="card-body p-4 sidebar">
-                <h4>Sidebar</h4>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Members</a></li>
+                <h4 className="text-center">Sidebar</h4>
+                <ul className="text-center">
                     <li>
-                        <button className='btn btn-primary mt-4' onClick={logout}>Logout</button>
+                        <Link
+                            className={
+                                location.pathname === "/admin/dashboard" ? "active" : ""
+                            }
+                            to="/admin/dashboard"
+                        >
+                            Dashboard
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="#">Articles</Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={
+                                location.pathname === "/admin/services" || location.pathname === "/admin/services/create" || location.pathname === "/admin/services/edit/:id" ? "active" : ""
+                            }
+                            to="/admin/services"
+                        >
+                            Services
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="#">Projects</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Testimonials</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Members</Link>
+                    </li>
+                    <li>
+                        <button className="btn btn-primary mt-4" onClick={logout}>
+                            Logout
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 
-export default Sidebar
+export default Sidebar;
