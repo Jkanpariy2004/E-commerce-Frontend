@@ -97,10 +97,11 @@ function Create() {
                                             <label htmlFor="" className="form-lable">
                                                 Short Description
                                             </label>
-                                            <textarea
+                                            <input
                                                 {...register("short_desc", {
                                                     required: "The Short Description field is required",
                                                 })}
+                                                type="text"
                                                 className={`form-control ${errors.short_desc && "is-invalid"}`}
                                                 rows={4}
                                                 placeholder="Enter Service Short Description"

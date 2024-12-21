@@ -13,6 +13,9 @@ import RequireAuth from "./Components/Common/RequireAuth"
 import ServicesShow from "./Components/Backend/Services/Show"
 import ServicesCreate from "./Components/Backend/Services/Create"
 import ServicesEdit from "./Components/Backend/Services/Edit"
+import ProjectsShow from "./Components/Backend/Projects/Show"
+import ProjectsCreate from "./Components/Backend/Projects/Create"
+import ProjectsEdit from "./Components/Backend/Projects/Edit"
 
 function App() {
   return (
@@ -27,12 +30,14 @@ function App() {
 
         {/* Admin Panel */}
         <Route path="/admin" element={<Login />} />
+
         <Route path="/admin/dashboard" element={
           <RequireAuth>
             <Dashboard />
           </RequireAuth>
         } />
 
+        {/* services */}
         <Route path="/admin/services" element={
           <RequireAuth>
             <ServicesShow />
@@ -48,6 +53,25 @@ function App() {
         <Route path="/admin/services/edit/:id" element={
           <RequireAuth>
             <ServicesEdit />
+          </RequireAuth>
+        } />
+
+        {/* projects */}
+        <Route path="/admin/projects" element={
+          <RequireAuth>
+            <ProjectsShow />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/projects/create" element={
+          <RequireAuth>
+            <ProjectsCreate />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/projects/edit/:id" element={
+          <RequireAuth>
+            <ProjectsEdit />
           </RequireAuth>
         } />
       </Routes>

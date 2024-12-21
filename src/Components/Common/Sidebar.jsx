@@ -34,7 +34,14 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="#">Projects</Link>
+                        <Link
+                            className={
+                                location.pathname === "/admin/projects" || location.pathname === "/admin/projects/create" || location.pathname === "/admin/projects/edit/:id" ? "active" : ""
+                            }
+                            to="/admin/projects"
+                        >
+                            Projects
+                        </Link>
                     </li>
                     <li>
                         <Link to="#">Testimonials</Link>
