@@ -5,10 +5,10 @@ import Services from "./Components/Frontend/Services"
 import Projects from "./Components/Frontend/Projects"
 import Blogs from "./Components/Frontend/Blogs"
 import ContactUs from "./Components/Frontend/ContactUs"
-import Login from "./Components/Backend/Login"
+import Login from "./Components/Backend/Login/Login"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Dashboard from "./Components/Backend/Dashboard"
+import Dashboard from "./Components/Backend/Dashboard/Dashboard"
 import RequireAuth from "./Components/Common/RequireAuth"
 import ServicesShow from "./Components/Backend/Services/Show"
 import ServicesCreate from "./Components/Backend/Services/Create"

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Header from "../Layouts/Header";
-import Footer from "../Layouts/Footer";
+import Header from "../../Layouts/Header";
+import Footer from "../../Layouts/Footer";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "./Context/Auth";
+import { AuthContext } from "../Context/Auth";
 
 function Login() {
     const { login } = useContext(AuthContext);
