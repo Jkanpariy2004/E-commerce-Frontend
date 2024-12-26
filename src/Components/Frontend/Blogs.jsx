@@ -38,7 +38,7 @@ function Blogs() {
                             {
                                 articles && articles.map(articles => {
                                     return (
-                                        <div className="col-md-4">
+                                        <div className="col-md-4" key={articles.id}>
                                             <div className="card shadow border-0">
                                                 <div className="card-img-top">
                                                     <img src={articles.image} alt="" className='w-100' />

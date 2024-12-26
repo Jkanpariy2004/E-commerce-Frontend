@@ -4,6 +4,7 @@ import Footer from "../Layouts/Footer";
 import AboutSec from "../Common/AboutSec";
 import MemberImg from '../../assets/images/team1.jpg'
 import HeroSec from "../Common/HeroSec";
+import Testimonials from "../Common/Testimonials";
 
 function About() {
     return (
@@ -15,6 +16,8 @@ function About() {
                     <HeroSec preHeading='Quality. Integrity. Value' heading='About Us' />
 
                     <AboutSec />
+
+                    <Testimonials />
 
                     <section className="section-8 bg-light py-5">
                         <div className="container">

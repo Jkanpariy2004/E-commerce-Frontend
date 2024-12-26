@@ -23,7 +23,7 @@ function Sidebar() {
                     <li>
                         <Link
                             className={
-                                location.pathname === "/admin/articles" || location.pathname === "/admin/articles/create" || location.pathname === "/admin/articles/edit/:id" ? "active" : ""
+                                location.pathname === "/admin/articles" || location.pathname === "/admin/articles/create" || location.pathname.startsWith("/admin/articles/edit/") ? "active" : ""
                             }
                             to="/admin/articles"
                         >
@@ -33,7 +33,7 @@ function Sidebar() {
                     <li>
                         <Link
                             className={
-                                location.pathname === "/admin/services" || location.pathname === "/admin/services/create" || location.pathname === "/admin/services/edit/:id" ? "active" : ""
+                                location.pathname === "/admin/services" || location.pathname === "/admin/services/create" || location.pathname.startsWith("/admin/services/edit/") ? "active" : ""
                             }
                             to="/admin/services"
                         >
@@ -43,7 +43,7 @@ function Sidebar() {
                     <li>
                         <Link
                             className={
-                                location.pathname === "/admin/projects" || location.pathname === "/admin/projects/create" || location.pathname === "/admin/projects/edit/:id" ? "active" : ""
+                                location.pathname === "/admin/projects" || location.pathname === "/admin/projects/create" || location.pathname.startsWith("/admin/projects/edit/") ? "active" : ""
                             }
                             to="/admin/projects"
                         >
@@ -51,8 +51,20 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="#">Testimonials</Link>
+                        <Link
+                            className={
+                                location.pathname === "/admin/testimonials" ||
+                                    location.pathname === "/admin/testimonials/create" ||
+                                    location.pathname.startsWith("/admin/testimonials/edit/")
+                                    ? "active"
+                                    : ""
+                            }
+                            to="/admin/testimonials"
+                        >
+                            Testimonials
+                        </Link>
                     </li>
+
                     <li>
                         <Link to="#">Members</Link>
                     </li>

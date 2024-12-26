@@ -19,6 +19,9 @@ import ProjectsEdit from "./Components/Backend/Projects/Edit"
 import ArticlesShow from "./Components/Backend/Articles/Show"
 import ArticlesCreate from "./Components/Backend/Articles/Create"
 import ArticlesEdit from "./Components/Backend/Articles/Edit"
+import TestimonialsShow from "./Components/Backend/Testimonials/Show"
+import TestimonialsCreate from "./Components/Backend/Testimonials/Create"
+import TestimonialsEdit from "./Components/Backend/Testimonials/Edit"
 
 function App() {
   return (
@@ -94,6 +97,25 @@ function App() {
         <Route path="/admin/articles/edit/:id" element={
           <RequireAuth>
             <ArticlesEdit />
+          </RequireAuth>
+        } />
+
+        {/* Testimonial */}
+        <Route path="/admin/testimonials" element={
+          <RequireAuth>
+            <TestimonialsShow />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/testimonials/create" element={
+          <RequireAuth>
+            <TestimonialsCreate />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/testimonials/edit/:id" element={
+          <RequireAuth>
+            <TestimonialsEdit />
           </RequireAuth>
         } />
       </Routes>
