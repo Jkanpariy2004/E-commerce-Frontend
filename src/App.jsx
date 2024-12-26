@@ -16,6 +16,9 @@ import ServicesEdit from "./Components/Backend/Services/Edit"
 import ProjectsShow from "./Components/Backend/Projects/Show"
 import ProjectsCreate from "./Components/Backend/Projects/Create"
 import ProjectsEdit from "./Components/Backend/Projects/Edit"
+import ArticlesShow from "./Components/Backend/Articles/Show"
+import ArticlesCreate from "./Components/Backend/Articles/Create"
+import ArticlesEdit from "./Components/Backend/Articles/Edit"
 
 function App() {
   return (
@@ -72,6 +75,25 @@ function App() {
         <Route path="/admin/projects/edit/:id" element={
           <RequireAuth>
             <ProjectsEdit />
+          </RequireAuth>
+        } />
+
+        {/* Articles */}
+        <Route path="/admin/articles" element={
+          <RequireAuth>
+            <ArticlesShow />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/articles/create" element={
+          <RequireAuth>
+            <ArticlesCreate />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/articles/edit/:id" element={
+          <RequireAuth>
+            <ArticlesEdit />
           </RequireAuth>
         } />
       </Routes>
