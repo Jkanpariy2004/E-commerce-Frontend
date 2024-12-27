@@ -64,9 +64,19 @@ function Sidebar() {
                             Testimonials
                         </Link>
                     </li>
-
                     <li>
-                        <Link to="#">Members</Link>
+                        <Link
+                            className={
+                                location.pathname === "/admin/members" ||
+                                    location.pathname === "/admin/members/create" ||
+                                    location.pathname.startsWith("/admin/members/edit/")
+                                    ? "active"
+                                    : ""
+                            }
+                            to="/admin/members"
+                        >
+                            Members
+                        </Link>
                     </li>
                     <li>
                         <button className="btn btn-primary mt-4" onClick={logout}>

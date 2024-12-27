@@ -69,6 +69,7 @@ function Login() {
                                             type="text"
                                             className={`form-control ${errors.email && "is-invalid"}`}
                                             placeholder="Please Enter Email"
+                                            autoFocus
                                         />
                                         {errors.email && (
                                             <p className="invalid-feedback">

@@ -78,6 +78,22 @@ p {
     }
 }
 
+.active-service {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+
+    &:hover {
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+        color: #ffffff;
+    }
+}
+
 .btn-secondary {
     background-color: $secondary-color;
     border: 1px solid $secondary-color;
@@ -392,4 +408,68 @@ footer {
 
 .tox:not(.tox-tinymce-inline) .tox-editor-header {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.members-img {
+    width: 50px;
+    height: 330px;
+}
+
+.linkedin-icon {
+    width: 30px;
+    height: 30px;
+}
+.service-details-page {
+    .container {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            aside.service-list {
+                padding: 20px;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 15px;
+                }
+                ul {
+                    li {
+                        margin-top: 20px;
+                        letter-spacing: 3px;
+                    }
+                }
+            }
+
+            section.service-details {
+                padding: 20px;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+
+                img {
+                    max-width: 100%;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                p {
+                    font-size: 1.125rem;
+                    line-height: 1.8;
+                    color: #555;
+                }
+            }
+        }
+    }
 }

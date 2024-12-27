@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 function Edit() {
     const param = useParams();
-    const [testimonials, setTestimonials] = useState([]);
+    const [members, setMembers] = useState([]);
     const Navigate = useNavigate();
 
     const {
@@ -18,31 +18,33 @@ function Edit() {
         formState: { errors },
     } = useForm({
         defaultValues: async () => {
-            const response = await fetch(apiUrl + 'testimonial/get/' + param.id, {
+            const response = await fetch(apiUrl + 'members/get/' + param.id, {
                 method: 'GET',
                 headers: {
+                    'Content-Type': 'application/json',
                     Accept: 'application/json',
                     Authorization: `Bearer ${token()}`
                 },
             });
 
             const result = await response.json();
-            setTestimonials(result.data);
+            setMembers(result.data);
             return {
-                testimonial: result.data.testimonial,
-                citation: result.data.citation,
-                designations: result.data.designations,
+                name: result.data.name,
+                job_title: result.data.job_title,
+                linkedin_url: result.data.linkedin_url,
                 status: result.data.status,
             }
+
         }
     });
 
     const onSubmit = async (data) => {
         const formData = new FormData();
 
-        formData.append('testimonial', data.testimonial);
-        formData.append('citation', data.citation);
-        formData.append('designations', data.designations);
+        formData.append('name', data.name);
+        formData.append('job_title', data.job_title);
+        formData.append('linkedin_url', data.linkedin_url);
         formData.append('status', data.status);
 
         if (data.image[0]) {
@@ -50,7 +52,7 @@ function Edit() {
         }
 
         try {
-            const response = await fetch(apiUrl + 'testimonial/update/' + param.id, {
+            const response = await fetch(apiUrl + 'members/update/' + param.id, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -63,7 +65,7 @@ function Edit() {
 
             if (result.success == true) {
                 toast.success(result.message);
-                Navigate('/admin/testimonials');
+                Navigate('/admin/members');
             } else {
                 toast.error(result.message);
             }
@@ -87,8 +89,8 @@ function Edit() {
                             <div className="card border-0 shadow">
                                 <div className="card-body p-4">
                                     <div className="d-flex justify-content-between">
-                                        <h4 className="h5">Create Articles</h4>
-                                        <Link to="/admin/articles" className="btn btn-primary">
+                                        <h4 className="h5">Create Member</h4>
+                                        <Link to="/admin/members" className="btn btn-primary">
                                             Back
                                         </Link>
                                     </div>
@@ -97,57 +99,19 @@ function Edit() {
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <div className="mb-3">
                                             <label htmlFor="" className="form-lable">
-                                                Testimonial
+                                                Name
                                             </label>
                                             <input
-                                                {...register("testimonial", {
-                                                    required: "The Testimonial field is required",
+                                                {...register("name", {
+                                                    required: "The Name field is required",
                                                 })}
                                                 type="text"
-                                                className={`form-control ${errors.testimonial && "is-invalid"}`}
-                                                placeholder="Enter Article Testimonial"
+                                                className={`form-control ${errors.name && "is-invalid"}`}
+                                                placeholder="Enter Member Name"
                                             />
-                                            {errors.testimonial && (
+                                            {errors.name && (
                                                 <p className="invalid-feedback">
-                                                    {errors.testimonial?.message}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="" className="form-lable">
-                                                Citation
-                                            </label>
-                                            <input
-                                                {...register("citation", {
-                                                    required: "The Citation field is required",
-                                                })}
-                                                type="text"
-                                                className={`form-control ${errors.citation && "is-invalid"}`}
-                                                rows={4}
-                                                placeholder="Enter Article Citation"
-                                            />
-                                            {errors.citation && (
-                                                <p className="invalid-feedback">
-                                                    {errors.citation?.message}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="" className="form-lable">
-                                                Designation
-                                            </label>
-                                            <input
-                                                {...register("designations", {
-                                                    required: "The Designation field is required",
-                                                })}
-                                                type="text"
-                                                className={`form-control ${errors.designations && "is-invalid"}`}
-                                                rows={4}
-                                                placeholder="Enter Article Designation"
-                                            />
-                                            {errors.designations && (
-                                                <p className="invalid-feedback">
-                                                    {errors.designations?.message}
+                                                    {errors.name?.message}
                                                 </p>
                                             )}
                                         </div>
@@ -161,11 +125,49 @@ function Edit() {
                                                 className={`form-control ${errors.image && "is-invalid"}`}
                                             />
                                             {
-                                                testimonials.image && <img src={testimonials.image} width={300} height={200} />
+                                                members.image && <img src={members.image} width={300} height={200} />
                                             }
                                             {errors.image && (
                                                 <p className="invalid-feedback">
                                                     {errors.image?.message}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="mb-3">
+                                            <label htmlFor="" className="form-lable">
+                                                Job Title
+                                            </label>
+                                            <input
+                                                {...register("job_title", {
+                                                    required: "The Job Title field is required",
+                                                })}
+                                                type="text"
+                                                className={`form-control ${errors.job_title && "is-invalid"}`}
+                                                rows={4}
+                                                placeholder="Enter Member Job Title"
+                                            />
+                                            {errors.job_title && (
+                                                <p className="invalid-feedback">
+                                                    {errors.job_title?.message}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="mb-3">
+                                            <label htmlFor="" className="form-lable">
+                                                LinkedIn URL
+                                            </label>
+                                            <input
+                                                {...register("linkedin_url", {
+                                                    required: "The LinkedIn URL is required",
+                                                })}
+                                                type="text"
+                                                className={`form-control ${errors.linkedin_url && "is-invalid"}`}
+                                                rows={4}
+                                                placeholder="Enter Article Designation"
+                                            />
+                                            {errors.linkedin_url && (
+                                                <p className="invalid-feedback">
+                                                    {errors.linkedin_url?.message}
                                                 </p>
                                             )}
                                         </div>
@@ -179,7 +181,7 @@ function Edit() {
                                                 })}
                                                 className={`form-control ${errors.status && "is-invalid"}`}
                                             >
-                                                <option value="" hidden>Select Project Status</option>
+                                                <option value="" hidden>Select Member Status</option>
                                                 <option value="1">Active</option>
                                                 <option value="0">Inactive</option>
                                             </select>

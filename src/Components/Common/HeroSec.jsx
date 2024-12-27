@@ -7,10 +7,10 @@ function HeroSec({ preHeading, heading, text }) {
                 <div className="container">
                     <div className="text-start">
                         <span>{preHeading}</span>
-                        <h1>
-                            {heading}
-                        </h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ullam <br /> neque adipisci quasi assumenda dolorum iure minus aut commodi quam!</p>
+                        <h1>{heading}</h1>
+                        <p>
+                            {text || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ullam <br /> neque adipisci quasi assumenda dolorum iure minus aut commodi quam!'}
+                        </p>
                     </div>
                 </div>
             </div>

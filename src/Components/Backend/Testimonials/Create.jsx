@@ -84,7 +84,7 @@ function Create() {
                                                 })}
                                                 type="text"
                                                 className={`form-control ${errors.testimonial && "is-invalid"}`}
-                                                placeholder="Enter Article Testimonial"
+                                                placeholder="Enter Testimonial"
                                             />
                                             {errors.testimonial && (
                                                 <p className="invalid-feedback">

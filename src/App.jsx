@@ -22,6 +22,11 @@ import ArticlesEdit from "./Components/Backend/Articles/Edit"
 import TestimonialsShow from "./Components/Backend/Testimonials/Show"
 import TestimonialsCreate from "./Components/Backend/Testimonials/Create"
 import TestimonialsEdit from "./Components/Backend/Testimonials/Edit"
+import MembersShow from "./Components/Backend/Members/Show"
+import MembersCreate from "./Components/Backend/Members/Create"
+import MembersEdit from "./Components/Backend/Members/Edit"
+import ServiceDetails from "./Components/Frontend/ServiceDetails"
+import ProjectDetails from "./Components/Frontend/ProjectDetails"
 
 function App() {
   return (
@@ -30,6 +35,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/service/:slug" element={<ServiceDetails />} />
+        <Route path="/project/:slug" element={<ProjectDetails />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact-us" element={<ContactUs />} />
@@ -116,6 +123,25 @@ function App() {
         <Route path="/admin/testimonials/edit/:id" element={
           <RequireAuth>
             <TestimonialsEdit />
+          </RequireAuth>
+        } />
+
+        {/* members */}
+        <Route path="/admin/members" element={
+          <RequireAuth>
+            <MembersShow />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/members/create" element={
+          <RequireAuth>
+            <MembersCreate />
+          </RequireAuth>
+        } />
+
+        <Route path="/admin/members/edit/:id" element={
+          <RequireAuth>
+            <MembersEdit />
           </RequireAuth>
         } />
       </Routes>
